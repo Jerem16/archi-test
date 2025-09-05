@@ -8,9 +8,13 @@
         "strict": true,
         "baseUrl": ".",
         "paths": {
+            "@packages/ui": ["packages/ui/src/index.ts"],
             "@packages/ui/*": ["packages/ui/src/*"],
+            "@packages/domain": ["packages/domain/src/index.ts"],
             "@packages/domain/*": ["packages/domain/src/*"],
+            "@packages/services": ["packages/services/src/index.ts"],
             "@packages/services/*": ["packages/services/src/*"],
+            "@packages/types": ["packages/types/src/index.ts"],
             "@packages/types/*": ["packages/types/src/*"]
         }
     },

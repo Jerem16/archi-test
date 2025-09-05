@@ -19,6 +19,7 @@
     },
     "dependencies": {
         "react-markdown": "10.1.0",
+        "@packages/types": "workspace:*",
         "remark-gfm": "^4.0.0"
     }
 }

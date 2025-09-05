@@ -1,0 +1,10 @@
+// ./packages/tsconfig.json
+{
+    "files": [],
+    "references": [
+        { "path": "./types" },
+        { "path": "./domain" },
+        { "path": "./services" },
+        { "path": "./ui" }
+    ]
+}
