@@ -18,8 +18,8 @@
         "react-dom": ">=18"
     },
     "dependencies": {
-        "react-markdown": "10.1.0",
         "@packages/types": "workspace:*",
+        "react-markdown": "10.1.0",
         "remark-gfm": "^4.0.0"
     }
 }

@@ -1,47 +1,32 @@
 {
-  "extends": "../../tsconfig.base.json",
-  "compilerOptions": {
-    "noEmit": true,
-    "jsx": "preserve",
-    "incremental": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "baseUrl": "../..",
-    "paths": {
-      "@packages/ui/*": [
-        "packages/ui/src/*"
-      ],
-      "@packages/domain/*": [
-        "packages/domain/src/*"
-      ],
-      "@packages/services/*": [
-        "packages/services/src/*"
-      ],
-      "@packages/types/*": [
-        "packages/types/src/*"
-      ]
+    "compilerOptions": {
+        "noEmit": true,
+        "jsx": "preserve",
+        "incremental": true,
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "baseUrl": "../..",
+        "paths": {
+            "@packages/ui/*": ["packages/ui/src/*"],
+            "@packages/domain/*": ["packages/domain/src/*"],
+            "@packages/services/*": ["packages/services/src/*"],
+            "@packages/types/*": ["packages/types/src/*"]
+        },
+        "allowJs": true,
+        "plugins": [
+            {
+                "name": "next"
+            }
+        ]
     },
-    "allowJs": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ]
-  },
-  "include": [
-    "next-env.d.ts",
-    "app/**/*.{ts,tsx,js,jsx}",
-    "src/**/*.{ts,tsx,js,jsx}",
-    ".next/types/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+    "include": [
+        "next-env.d.ts",
+        "app/**/*.{ts,tsx,js,jsx}",
+        "src/**/*.{ts,tsx,js,jsx}",
+        ".next/types/**/*.ts"
+    ],
+    "exclude": ["node_modules"]
 }

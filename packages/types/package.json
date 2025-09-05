@@ -12,8 +12,5 @@
         "tsc": "tsc --noEmit",
         "lint": "echo \"(placeholder)\"",
         "test": "echo \"(placeholder)\""
-    },
-    "dependencies": {
-        "@packages/types": "workspace:*"
     }
 }
