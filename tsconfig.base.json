@@ -1,0 +1,34 @@
+{
+    "compilerOptions": {
+        "target": "ES2019",
+        "module": "ESNext",
+        "moduleResolution": "Node",
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "strict": true,
+        "baseUrl": ".",
+        "paths": {
+            "@packages/ui/*": ["packages/ui/src/*"],
+            "@packages/domain/*": ["packages/domain/src/*"],
+            "@packages/services/*": ["packages/services/src/*"],
+            "@packages/types/*": ["packages/types/src/*"]
+        }
+    },
+    "references": [
+        {
+            "path": "packages/types"
+        },
+        {
+            "path": "packages/domain"
+        },
+        {
+            "path": "packages/services"
+        },
+        {
+            "path": "packages/ui"
+        },
+        {
+            "path": "apps/web"
+        }
+    ]
+}

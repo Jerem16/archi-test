@@ -1,0 +1,16 @@
+:root {
+  --bg: #0b0f14;
+  --fg: #f6f7f9;
+  --accent: #3aa0ff;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: var(--bg);
+  color: var(--fg);
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }

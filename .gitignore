@@ -1,0 +1,13 @@
+node_modules
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.next
+dist
+out
+.DS_Store
+.env*
+coverage
+.playwright

@@ -1,0 +1,31 @@
+{
+    "private": true,
+    "workspaces": [
+        "apps/*",
+        "packages/*",
+        "tooling/*"
+    ],
+    "packageManager": "yarn@4.9.4",
+    "engines": {
+        "node": "20.18.x"
+    },
+    "scripts": {
+        "dev": "yarn workspace web dev",
+        "build": "yarn workspaces foreach -Rv --from web run build",
+        "tsc": "yarn workspaces foreach -Rv --from web run tsc",
+        "lint": "yarn workspaces foreach -Rv --from web run lint",
+        "test": "yarn workspaces foreach -Rv --from web run test",
+        "build:web": "yarn workspace web build",
+        "tsc:web": "yarn workspace web run tsc",
+        "tsc:packages": "yarn workspaces foreach -R --from \"@packages/*\" run tsc",
+        "lint:web": "yarn workspace web run lint",
+        "test:web": "yarn workspace web run test"
+    },
+    "devDependencies": {
+        "eslint": "^9.15.0",
+        "typescript": "5.4.4"
+    },
+    "resolutions": {
+        "react-hook-form": "7.51.5"
+    }
+}
