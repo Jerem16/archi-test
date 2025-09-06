@@ -5004,6 +5004,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/code-frame@npm:7.12.11":
+  version: 7.12.11
+  resolution: "@babel/code-frame@npm:7.12.11"
+  dependencies:
+    "@babel/highlight": "npm:^7.10.4"
+  checksum: 10c0/836ffd155506768e991d6dd8c51db37cad5958ed1c8e0a2329ccd9527165d5c752e943d66a5c3c92ffd45f343419f0742e7636629a529f4fbd5303e3637746b9
+  languageName: node
+  linkType: hard
+
 "@babel/code-frame@npm:^7.0.0, @babel/code-frame@npm:^7.10.4, @babel/code-frame@npm:^7.27.1":
   version: 7.27.1
   resolution: "@babel/code-frame@npm:7.27.1"
@@ -5196,7 +5205,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/helper-validator-identifier@npm:^7.27.1":
+"@babel/helper-validator-identifier@npm:^7.25.9, @babel/helper-validator-identifier@npm:^7.27.1":
   version: 7.27.1
   resolution: "@babel/helper-validator-identifier@npm:7.27.1"
   checksum: 10c0/c558f11c4871d526498e49d07a84752d1800bf72ac0d3dad100309a2eaba24efbf56ea59af5137ff15e3a00280ebe588560534b0e894a4750f8b1411d8f78b84
@@ -5217,6 +5226,18 @@ __metadata:
     "@babel/template": "npm:^7.27.2"
     "@babel/types": "npm:^7.28.4"
   checksum: 10c0/aaa5fb8098926dfed5f223adf2c5e4c7fbba4b911b73dfec2d7d3083f8ba694d201a206db673da2d9b3ae8c01793e795767654558c450c8c14b4c2175b4fcb44
+  languageName: node
+  linkType: hard
+
+"@babel/highlight@npm:^7.10.4":
+  version: 7.25.9
+  resolution: "@babel/highlight@npm:7.25.9"
+  dependencies:
+    "@babel/helper-validator-identifier": "npm:^7.25.9"
+    chalk: "npm:^2.4.2"
+    js-tokens: "npm:^4.0.0"
+    picocolors: "npm:^1.0.0"
+  checksum: 10c0/ae0ed93c151b85a07df42936117fa593ce91563a22dfc8944a90ae7088c9679645c33e00dcd20b081c1979665d65f986241172dae1fc9e5922692fc3ff685a49
   languageName: node
   linkType: hard
 
@@ -13679,6 +13700,30 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eslint-formatter-codeframe@npm:^7.32.1":
+  version: 7.32.1
+  resolution: "eslint-formatter-codeframe@npm:7.32.1"
+  dependencies:
+    "@babel/code-frame": "npm:7.12.11"
+    chalk: "npm:^4.0.0"
+  checksum: 10c0/dcde3de808e3c039919e184d0f3752d786f312ac350db65a64bfed38e43c1fc6129127c7fda29938f81a690b79481d83706a351299268ab7983ed619bf9437b9
+  languageName: node
+  linkType: hard
+
+"eslint-formatter-compact@npm:^8.40.0":
+  version: 8.40.0
+  resolution: "eslint-formatter-compact@npm:8.40.0"
+  checksum: 10c0/6e7e6b5f86ff5b6fa09b6c88e58d83a611a524dd8d946c98d16b681052ab67007da2bad79e3a5aadead9b3b391f2d38afdcd7c80d2e6309614016ffb13e503f3
+  languageName: node
+  linkType: hard
+
+"eslint-formatter-unix@npm:^8.40.0":
+  version: 8.40.0
+  resolution: "eslint-formatter-unix@npm:8.40.0"
+  checksum: 10c0/d059e598e1f38ec20af622eacc1980b71a5e1399725d2b67f58a6819f7787067812424a8c00bf8230cc2e963e1bfa8bd928addcc8dffcc34692910bbf73fe6aa
+  languageName: node
+  linkType: hard
+
 "eslint-import-resolver-node@npm:^0.3.6, eslint-import-resolver-node@npm:^0.3.9":
   version: 0.3.9
   resolution: "eslint-import-resolver-node@npm:0.3.9"
@@ -19225,10 +19270,11 @@ __metadata:
     "@typescript-eslint/eslint-plugin": "npm:^8.42.0"
     "@typescript-eslint/parser": "npm:^8.42.0"
     eslint: "npm:^9.35.0"
+    eslint-formatter-codeframe: "npm:^7.32.1"
+    eslint-formatter-compact: "npm:^8.40.0"
+    eslint-formatter-unix: "npm:^8.40.0"
     eslint-import-resolver-typescript: "npm:^3.6.1"
     eslint-plugin-import: "npm:^2.32.0"
-    eslint-plugin-react: "npm:^7.37.5"
-    eslint-plugin-react-hooks: "npm:^5.2.0"
     eslint-plugin-unused-imports: "npm:^4.2.0"
     typescript: "npm:5.4.4"
     typescript-eslint: "npm:^8.42.0"
