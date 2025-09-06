@@ -1,7 +1,7 @@
-export { AuthProvider } from "./auth/aws-authenticator/AuthProvider";
-export { default as Authentication } from "./auth/aws-authenticator/Authentication";
-export { default as AuthGuard } from "./auth/AuthGuard";
-export { RequireLoginButton } from "./auth/RequireLoginButton";
+export { default as AuthProvider } from "./aws-authenticator/auth-provider.js";
+export { default as Authentication } from "./aws-authenticator/Authentication.js";
+export { default as AuthGuard } from "./AuthGuard.js";
+export { RequireLoginButton } from "./RequireLoginButton.js";
 
 // déjà existants
-export { configureI18n, formFields } from "./auth/aws-authenticator";
+export { configureI18n, formFields } from "./aws-authenticator/index.js";
