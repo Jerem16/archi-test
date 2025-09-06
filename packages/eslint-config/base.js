@@ -1,32 +1,34 @@
+// packages/eslint-config/base.js
 import js from "@eslint/js";
-import eslintConfigPrettier from "eslint-config-prettier";
-import turboPlugin from "eslint-plugin-turbo";
 import tseslint from "typescript-eslint";
+import eslintConfigPrettier from "eslint-config-prettier";
 import onlyWarn from "eslint-plugin-only-warn";
+import globals from "globals";
 
-/**
- * A shared ESLint configuration for the repository.
- *
- * @type {import("eslint").Linter.Config[]}
- * */
-export const config = [
+export default [
+    {
+        ignores: ["**/dist/**", "**/.next/**", "**/node_modules/**"],
+    },
+
+    // Base JS
     js.configs.recommended,
-    eslintConfigPrettier,
-    ...tseslint.configs.recommended,
+
+    // TypeScript (type-checked). Le consumer doit fournir parserOptions.project.
+    ...tseslint.configs.recommendedTypeChecked,
+
+    // Soft-mode (transforme error -> warn en dev si plugin activé)
+    { plugins: { "only-warn": onlyWarn } },
+
+    // Neutralise les conflits avec Prettier si tu l'utilises
+    ...eslintConfigPrettier,
+
+    // Globals Node/Browser utiles
     {
-        plugins: {
-            turbo: turboPlugin,
+        languageOptions: {
+            globals: {
+                ...globals.node,
+                ...globals.browser,
+            },
         },
-        rules: {
-            "turbo/no-undeclared-env-vars": "warn",
-        },
-    },
-    {
-        plugins: {
-            onlyWarn,
-        },
-    },
-    {
-        ignores: ["dist/**"],
     },
 ];

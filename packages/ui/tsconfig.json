@@ -8,6 +8,5 @@
         "jsx": "react-jsx",
         "tsBuildInfoFile": "./dist/.tsbuildinfo"
     },
-    "include": ["src"],
-    "exclude": ["node_modules", "dist"]
+    "include": ["src"]
 }

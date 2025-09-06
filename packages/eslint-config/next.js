@@ -1,49 +1,31 @@
-import js from "@eslint/js";
-import eslintConfigPrettier from "eslint-config-prettier";
-import tseslint from "typescript-eslint";
-import pluginReactHooks from "eslint-plugin-react-hooks";
-import pluginReact from "eslint-plugin-react";
-import globals from "globals";
-import pluginNext from "@next/eslint-plugin-next";
-import { config as baseConfig } from "./base.js";
+// packages/eslint-config/next.js
+import nextPlugin from "@next/eslint-plugin-next";
+import base from "./base.js";
 
-/**
- * A custom ESLint configuration for libraries that use Next.js.
- *
- * @type {import("eslint").Linter.Config[]}
- * */
-export const nextJsConfig = [
-    ...baseConfig,
-    js.configs.recommended,
-    eslintConfigPrettier,
-    ...tseslint.configs.recommended,
-    {
-        ...pluginReact.configs.flat.recommended,
-        languageOptions: {
-            ...pluginReact.configs.flat.recommended.languageOptions,
-            globals: {
-                ...globals.serviceworker,
+const nextRules = nextPlugin.configs["core-web-vitals"].rules;
+
+export default function makeNextConfig({
+    webProject = "./apps/web/tsconfig.json",
+    include = ["apps/web/{app,src}/**/*.{ts,tsx}"],
+} = {}) {
+    return [
+        ...base,
+
+        // Bloc Next + TS (type-checked). Le consumer passera le tsconfig de l'app.
+        {
+            files: include,
+            plugins: { "@next/next": nextPlugin },
+            languageOptions: {
+                parserOptions: {
+                    project: [webProject],
+                    tsconfigRootDir: new URL("../../", import.meta.url).pathname, // racine monorepo
+                },
+            },
+            settings: { next: { rootDir: ["apps/web/"] } },
+            rules: {
+                ...nextRules,
+                "@next/next/no-html-link-for-pages": "off", // App Router
             },
         },
-    },
-    {
-        plugins: {
-            "@next/next": pluginNext,
-        },
-        rules: {
-            ...pluginNext.configs.recommended.rules,
-            ...pluginNext.configs["core-web-vitals"].rules,
-        },
-    },
-    {
-        plugins: {
-            "react-hooks": pluginReactHooks,
-        },
-        settings: { react: { version: "detect" } },
-        rules: {
-            ...pluginReactHooks.configs.recommended.rules,
-            // React scope no longer necessary with new JSX transform.
-            "react/react-in-jsx-scope": "off",
-        },
-    },
-];
+    ];
+}
