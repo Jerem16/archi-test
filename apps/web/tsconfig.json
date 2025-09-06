@@ -16,6 +16,7 @@
             "@apps/*": ["apps/web/*"],
             "@app/*": ["apps/web/app/*"],
             "@src/*": ["apps/web/src/*"],
+            "@amplify": ["amplify/*"],
             "@packages/ui/*": ["packages/ui/src/*"],
             "@packages/domain/*": ["packages/domain/src/*"],
             "@packages/services/*": ["packages/services/src/*"],
@@ -41,8 +42,11 @@
         "src/**/*.jsx",
         "public/**/*.json",
         ".next/types/**/*.ts",
-        "../../packages/types/src/amplify-global.d.ts"
-, "../../packages/ui/src/auth/aws-authenticator/Authentication.tsx", "../../packages/ui/src/auth/AuthGuard.tsx", "../../packages/ui/src/auth/RequireLoginButton.tsx"    ],
+        "../../packages/types/src/amplify-global.d.ts",
+        "../../packages/ui/src/auth/aws-authenticator/Authentication.tsx",
+        "../../packages/ui/src/auth/AuthGuard.tsx",
+        "../../packages/ui/src/auth/RequireLoginButton.tsx"
+    ],
     "exclude": ["node_modules"],
     "references": [
         { "path": "../../packages/types" },
