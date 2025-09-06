@@ -3,9 +3,9 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { useAuthenticator } from "@aws-amplify/ui-react";
-import { useUserNameForm } from "@entities/models/userName/hooks";
-import { onUserNameUpdated } from "@entities/models/userName/bus";
-import type { UserNameType } from "@entities/models/userName";
+import { useUserNameForm } from "@src/entities/models/userName/hooks";
+import { onUserNameUpdated } from "@src/entities/models/userName/bus";
+import type { UserNameType } from "@src/entities/models/userName";
 import UserNameModal from "@/src/components/Profile/UserNameModal";
 import { useRouter } from "next/navigation";
 

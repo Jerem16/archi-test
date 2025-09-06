@@ -3,12 +3,14 @@
 import React from "react";
 import { Authenticator, View, Heading, useTheme } from "@aws-amplify/ui-react";
 import "@aws-amplify/ui-react/styles.css";
-import "@assets/styles/amplify/authenticator.scss";
+import { I18n } from "aws-amplify/utils"; // ✅ vrai I18n Amplify
+import { configAuthI18n, formFields } from "@packages/ui";
+
+// import "@assets/styles/amplify/authenticator.scss";
 import { signUp } from "aws-amplify/auth";
-import { configureI18n, formFields } from "@entities/core";
 import { userNameService } from "@src/entities/models/userName";
 
-configureI18n();
+configAuthI18n(I18n);
 
 export default function Authentication() {
     const services = {

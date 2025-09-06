@@ -19,7 +19,13 @@
             "@packages/ui/*": ["packages/ui/src/*"],
             "@packages/domain/*": ["packages/domain/src/*"],
             "@packages/services/*": ["packages/services/src/*"],
-            "@packages/types/*": ["packages/types/src/*"]
+            "@packages/types/*": ["packages/types/src/*"],
+            "@assets/*": ["apps/web/src/assets/*"],
+            "@components/*": ["apps/web/src/components/*"],
+            "@hooks/*": ["apps/web/src/hooks/*"],
+            "@context/*": ["apps/web/src/context/*"],
+            "@utils/*": ["apps/web/src/utils/*"],
+            "@public/*": ["apps/web/public/*"]
         },
         "plugins": [{ "name": "next" }]
     },
