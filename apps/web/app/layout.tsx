@@ -1,5 +1,5 @@
 import "./globals.scss";
-import React, { PropsWithChildren } from "react";
+import { PropsWithChildren } from "react";
 import AuthProvider from "@src/auth/Authentication/auth-provider";
 
 
