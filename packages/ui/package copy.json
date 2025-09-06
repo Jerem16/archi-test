@@ -21,10 +21,7 @@
     "peerDependenciesMeta": {
         "@types/react": {
             "optional": true
-        }
-    },
-    "dependencies": {
-        "@packages/types": "workspace:*",
+        },
         "react-markdown": "10.1.0",
         "remark-gfm": "^4.0.0"
     }
