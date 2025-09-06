@@ -6,6 +6,8 @@
         "composite": true,
         "declaration": true,
         "jsx": "react-jsx",
+        "emitDeclarationOnly": true,
+        "allowImportingTsExtensions": true,
         "module": "NodeNext",
         "moduleResolution": "NodeNext",
         "tsBuildInfoFile": "./dist/.tsbuildinfo",

@@ -13,6 +13,7 @@
             "@app/*": ["apps/web/app/*"],
             "@src/*": ["apps/web/src/*"],
             "@packages/ui": ["packages/ui/src"],
+            "@amplify": ["amplify/*"],
             "@packages/ui/*": ["packages/ui/src/*"],
             "@packages/services": ["packages/services/src"],
             "@packages/services/*": ["packages/services/src/*"],
