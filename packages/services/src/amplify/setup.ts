@@ -1,6 +1,6 @@
 // src/amplify/setup.ts
 import { Amplify } from "aws-amplify";
-import outputs from "@apps/amplify_outputs.json";
+import outputs from "@apps/amplify_outputs.json" with { type: "json" };
 declare global {
     var __AMPLIFY_CONFIGURED__: boolean | undefined;
 }

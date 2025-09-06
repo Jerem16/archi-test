@@ -1,2 +1,2 @@
-export * from "./MarkdownViewer";
-export * from "./auth/amplify";
+export * from "./MarkdownViewer.js";
+export * from "./auth/index.js";
