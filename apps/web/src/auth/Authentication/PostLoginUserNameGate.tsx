@@ -1,7 +1,7 @@
 // src/app/connexion/PostLoginUserNameGate.tsx
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useAuthenticator } from "@aws-amplify/ui-react";
 import { useUserNameForm } from "@entities/models/userName/hooks";
 import { onUserNameUpdated } from "@entities/models/userName/bus";

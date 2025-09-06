@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { Authenticator, View, Heading, useTheme } from "@aws-amplify/ui-react";
 import "@aws-amplify/ui-react/styles.css";
 import "@assets/styles/amplify/authenticator.scss";

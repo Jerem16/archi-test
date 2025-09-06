@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { MarkdownViewer } from "@packages/ui";
 import styles from "./page.module.scss";
 
