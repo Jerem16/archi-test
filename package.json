@@ -15,19 +15,25 @@
         "tsc": "yarn tsc:packages && yarn tsc:web",
         "tsc:packages": "tsc -b packages/tsconfig.json",
         "tsc:web": "yarn workspace web run tsc",
-        "lint": "yarn workspace @packages/domain run lint",
+        "lint": "yarn lint:ui && yarn lint:web",
         "lint:packages": "eslint \"packages/**/*.{ts,tsx,js,jsx}\"",
         "lint:web": "yarn workspace web run lint",
+        "lint:ui": "yarn workspace @packages/ui run lint",
         "test": "yarn workspaces foreach -Rvt run test",
         "test:web": "yarn workspace web run test",
         "check": "yarn tsc && yarn lint && yarn test",
-        "clean": "yarn workspaces foreach -Rvt run clean || echo \"no clean script\" && rm -rf packages/*/dist"
+        "clean": "yarn workspaces foreach -Rvt run clean || echo \"no clean script\""
     },
     "devDependencies": {
-        "@eslint/js": "^9.15.0",
-        "@typescript-eslint/eslint-plugin": "^8.32.1",
-        "@typescript-eslint/parser": "^8.32.1",
-        "eslint": "^9.15.0",
+        "eslint": "^9.35.0",
+        "@eslint/js": "^9.35.0",
+        "typescript-eslint": "^8.42.0",
+        "@typescript-eslint/parser": "^8.42.0",
+        "@typescript-eslint/eslint-plugin": "^8.42.0",
+        "@next/eslint-plugin-next": "^15.0.0",
+        "eslint-plugin-import": "^2.32.0",
+        "eslint-plugin-unused-imports": "^4.2.0",
+        "eslint-import-resolver-typescript": "^3.6.1",
         "typescript": "5.4.4"
     },
     "resolutions": {

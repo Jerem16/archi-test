@@ -10,11 +10,12 @@
     "scripts": {
         "build": "tsc --build",
         "tsc": "tsc --noEmit",
-        "lint": "eslint \"src/**/*.{ts,tsx}\"",
+        "lint": "eslint . --max-warnings 0",
         "test": "echo \"(placeholder)\""
     },
     "peerDependencies": {
         "@types/react": ">=18",
+        "next": "^15.3.1",
         "react": ">=18",
         "react-dom": ">=18"
     },
@@ -22,6 +23,14 @@
         "@types/react": {
             "optional": true
         }
+    },
+    "devDependencies": {
+        "@packages/eslint-config": "*",
+        "@types/node": "^22.15.3",
+        "@types/react": "19.1.0",
+        "@types/react-dom": "19.1.1",
+        "eslint": "^9.34.0",
+        "typescript": "5.9.2"
     },
     "dependencies": {
         "@packages/types": "workspace:*",
