@@ -27,7 +27,12 @@ export default function makeNextConfig({
             settings: { next: { rootDir: ["apps/web/"] } },
             rules: {
                 ...nextRules,
-                "@next/next/no-html-link-for-pages": "off", // App Router
+                "@next/next/no-html-link-for-pages": "off",
+                // TypeScript "unsafe" → trop verbeux dans l'app Next
+                "@typescript-eslint/no-unsafe-call": "off",
+                "@typescript-eslint/no-unsafe-member-access": "off",
+                "@typescript-eslint/no-unsafe-return": "off",
+                "@typescript-eslint/no-unsafe-assignment": "off",
             },
         },
     ];
