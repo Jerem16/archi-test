@@ -1,3 +1,3 @@
-export * from "./amplify/setup.js";
-export * from "./amplify/useAmplifyReady.js";
-export * from "./userName.js";
+export * from "./userName";
+export * from "./amplify/setup";
+export * from "./amplify/useAmplifyReady";
