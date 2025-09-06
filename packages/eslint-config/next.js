@@ -2,7 +2,7 @@
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 import nextPlugin from "@next/eslint-plugin-next";
-import base from "./base.js";
+import { config as reactConfig } from "./react-internal.js";
 
 const tsconfigRootDir = path.dirname(fileURLToPath(new URL("../../package.json", import.meta.url)));
 const nextRules = nextPlugin.configs["core-web-vitals"].rules;
@@ -12,7 +12,7 @@ export default function makeNextConfig({
     include = ["apps/web/{app,src}/**/*.{ts,tsx}"],
 } = {}) {
     return [
-        ...base,
+        ...reactConfig,
 
         // Bloc Next + TS (type-checked). Le consumer passera le tsconfig de l'app.
         {

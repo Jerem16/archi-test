@@ -1,6 +1,6 @@
 import { fileURLToPath } from "node:url";
 import path from "node:path";
-import baseConfig from "../eslint.config.mjs";
+import baseConfig from "@packages/eslint-config/base";
 
 const tsconfigRootDir = path.dirname(fileURLToPath(new URL("./package.json", import.meta.url)));
 

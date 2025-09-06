@@ -26,7 +26,7 @@ export default [
     })),
 
     // Soft-mode (transforme error -> warn en dev si plugin activé)
-    { plugins: { "only-warn": onlyWarn } },
+    // { plugins: { "only-warn": onlyWarn } },
 
     // Neutralise les conflits avec Prettier si tu l'utilises
     eslintConfigPrettier,

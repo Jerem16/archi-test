@@ -19227,6 +19227,8 @@ __metadata:
     eslint: "npm:^9.35.0"
     eslint-import-resolver-typescript: "npm:^3.6.1"
     eslint-plugin-import: "npm:^2.32.0"
+    eslint-plugin-react: "npm:^7.37.5"
+    eslint-plugin-react-hooks: "npm:^5.2.0"
     eslint-plugin-unused-imports: "npm:^4.2.0"
     typescript: "npm:5.4.4"
     typescript-eslint: "npm:^8.42.0"
