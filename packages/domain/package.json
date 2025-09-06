@@ -10,7 +10,7 @@
     "scripts": {
         "build": "tsc --build",
         "tsc": "tsc --noEmit",
-        "lint": "eslint \"src/**/*.{ts,tsx}\"",
+        "lint": "eslint -c eslint.config.js .",
         "test": "echo \"(placeholder)\""
     },
     "dependencies": {
