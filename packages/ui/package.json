@@ -14,9 +14,10 @@
         "test": "echo \"(placeholder)\""
     },
     "peerDependencies": {
-        "@types/react": ">=18",
         "react": ">=18",
-        "react-dom": ">=18"
+        "react-dom": ">=18",
+        "next": ">=15",
+        "@aws-amplify/ui-react": ">=6"
     },
     "peerDependenciesMeta": {
         "@types/react": {

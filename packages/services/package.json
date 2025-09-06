@@ -3,9 +3,17 @@
     "version": "0.1.0",
     "private": true,
     "type": "module",
-    "main": "src/index.ts",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
     "exports": {
-        ".": "./src/index.ts"
+        ".": {
+            "types": "./dist/index.d.ts",
+            "default": "./dist/index.js"
+        },
+        "./amplify/*": {
+            "types": "./dist/amplify/*.d.ts",
+            "default": "./dist/amplify/*.js"
+        }
     },
     "scripts": {
         "build": "tsc --build",
@@ -15,7 +23,9 @@
     },
     "dependencies": {
         "@packages/domain": "workspace:*",
-        "@packages/types": "workspace:*",
-        "aws-amplify": "^6.14.4"
+        "@packages/types": "workspace:*"
+    },
+    "peerDependencies": {
+        "aws-amplify": ">=6"
     }
 }

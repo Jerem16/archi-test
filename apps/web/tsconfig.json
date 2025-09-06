@@ -42,7 +42,7 @@
         "public/**/*.json",
         ".next/types/**/*.ts",
         "../../packages/types/src/amplify-global.d.ts"
-    ],
+, "../../packages/ui/src/auth/aws-authenticator/Authentication.tsx", "../../packages/ui/src/auth/AuthGuard.tsx", "../../packages/ui/src/auth/RequireLoginButton.tsx"    ],
     "exclude": ["node_modules"],
     "references": [
         { "path": "../../packages/types" },

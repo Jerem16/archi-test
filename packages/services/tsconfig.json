@@ -5,8 +5,11 @@
         "outDir": "dist",
         "composite": true,
         "declaration": true,
+        "emitDeclarationOnly": false,
+        "jsx": "react-jsx",
+        "moduleResolution": "NodeNext",
+        "module": "NodeNext",
         "tsBuildInfoFile": "./dist/.tsbuildinfo"
     },
-    "include": ["src"],
-    "references": [{ "path": "../types" }, { "path": "../domain" }]
+    "include": ["src"]
 }

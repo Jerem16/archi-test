@@ -1,2 +1,2 @@
-export { configureI18n } from "./i18n";
-export { formFields, formFieldsAll } from "./forms";
+export { configureI18n } from "./i18n.js";
+export { formFields, formFieldsAll } from "./forms.js";

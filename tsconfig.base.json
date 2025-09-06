@@ -12,14 +12,14 @@
             "@apps/*": ["apps/web/*"],
             "@app/*": ["apps/web/app/*"],
             "@src/*": ["apps/web/src/*"],
-            "@packages/ui": ["packages/ui/src/index.ts"],
+            "@packages/ui": ["packages/ui/src"],
             "@packages/ui/*": ["packages/ui/src/*"],
-            "@packages/domain": ["packages/domain/src/index.ts"],
-            "@packages/domain/*": ["packages/domain/src/*"],
-            "@packages/services": ["packages/services/src/index.ts"],
+            "@packages/services": ["packages/services/src"],
             "@packages/services/*": ["packages/services/src/*"],
-            "@packages/types": ["packages/types/src/index.ts"],
-            "@packages/types/*": ["packages/types/src/*"]
+            "@packages/types": ["packages/types/src"],
+            "@packages/types/*": ["packages/types/src/*"],
+            "@packages/domain": ["packages/domain/src"],
+            "@packages/domain/*": ["packages/domain/src/*"]
         }
     },
     "references": [

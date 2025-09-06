@@ -1,2 +1,2 @@
 export * from "./MarkdownViewer";
-export * from "./auth/aws-authenticator";
+export * from "./auth/amplify";
