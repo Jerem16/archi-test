@@ -20,7 +20,7 @@ export default [
     { plugins: { "only-warn": onlyWarn } },
 
     // Neutralise les conflits avec Prettier si tu l'utilises
-    ...eslintConfigPrettier,
+    eslintConfigPrettier,
 
     // Globals Node/Browser utiles
     {
