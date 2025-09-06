@@ -13,8 +13,17 @@ export default [
     // Base JS
     js.configs.recommended,
 
+    // JS sans infos de type
+    ...tseslint.configs.recommended.map((config) => ({
+        ...config,
+        files: ["**/*.js"],
+    })),
+
     // TypeScript (type-checked). Le consumer doit fournir parserOptions.project.
-    ...tseslint.configs.recommendedTypeChecked,
+    ...tseslint.configs.recommendedTypeChecked.map((config) => ({
+        ...config,
+        files: ["**/*.{ts,tsx}"],
+    })),
 
     // Soft-mode (transforme error -> warn en dev si plugin activé)
     { plugins: { "only-warn": onlyWarn } },
