@@ -15,7 +15,7 @@
         "tsc": "yarn tsc:packages && yarn tsc:web",
         "tsc:packages": "tsc -b packages/tsconfig.json",
         "tsc:web": "yarn workspace web run tsc",
-        "lint": "eslint packages/domain packages/services packages/types packages/ui apps/web",
+        "lint": "eslint -f unix --max-warnings=0 packages/domain packages/services packages/types packages/ui apps/web",
         "lint:packages": "eslint \"packages/**/*.{ts,tsx,js,jsx}\"",
         "lint:web": "eslint apps/web",
         "test": "yarn workspaces foreach -Rvt run test",
