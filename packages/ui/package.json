@@ -10,7 +10,7 @@
     "scripts": {
         "build": "tsc --build",
         "tsc": "tsc --noEmit",
-        "lint": "echo \"(placeholder)\"",
+        "lint": "eslint \"src/**/*.{ts,tsx}\"",
         "test": "echo \"(placeholder)\""
     },
     "peerDependencies": {

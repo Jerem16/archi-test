@@ -12,11 +12,12 @@
     "scripts": {
         "dev": "yarn workspace web dev",
         "build": "tsc -b packages/tsconfig.json",
-        "tsc": "tsc -b packages/tsconfig.json",
+        "tsc": "yarn tsc:packages && yarn tsc:web",
         "tsc:packages": "tsc -b packages/tsconfig.json",
         "tsc:web": "yarn workspace web run tsc",
-        "lint": "yarn workspaces foreach -Rvt run lint",
-        "lint:web": "yarn workspace web run lint",
+        "lint": "yarn lint:packages && yarn lint:web",
+        "lint:packages": "eslint \"packages/**/*.{ts,tsx,js,jsx}\"",
+        "lint:web": "eslint \"apps/web/**/*.{ts,tsx,js,jsx}\"",
         "test": "yarn workspaces foreach -Rvt run test",
         "test:web": "yarn workspace web run test",
         "check": "yarn tsc && yarn lint && yarn test",
@@ -24,6 +25,9 @@
     },
     "devDependencies": {
         "eslint": "^9.15.0",
+        "@eslint/js": "^9.15.0",
+        "@typescript-eslint/parser": "^8.32.1",
+        "@typescript-eslint/eslint-plugin": "^8.32.1",
         "typescript": "5.4.4"
     },
     "resolutions": {

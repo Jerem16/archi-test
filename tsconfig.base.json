@@ -8,6 +8,10 @@
         "strict": true,
         "baseUrl": ".",
         "paths": {
+            "@/*": ["./*"],
+            "@apps/*": ["apps/web/*"],
+            "@app/*": ["apps/web/app/*"],
+            "@src/*": ["apps/web/src/*"],
             "@packages/ui": ["packages/ui/src/index.ts"],
             "@packages/ui/*": ["packages/ui/src/*"],
             "@packages/domain": ["packages/domain/src/index.ts"],
