@@ -1,6 +1,9 @@
 import makeNextConfig from "@packages/eslint-config/next-js";
 
 export default [
+    {
+        ignores: ["**/dist/**", "**/.next/**", "**/node_modules/**", "**/eslint.config.js"],
+    },
     { ignores: ["apps/web/next-env.d.ts", "apps/web/next.config.ts"] },
     ...makeNextConfig({
         webProject: "./apps/web/tsconfig.json",
