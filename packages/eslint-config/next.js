@@ -1,7 +1,10 @@
 // packages/eslint-config/next.js
+import { fileURLToPath } from "node:url";
+import path from "node:path";
 import nextPlugin from "@next/eslint-plugin-next";
 import base from "./base.js";
 
+const tsconfigRootDir = path.dirname(fileURLToPath(new URL("../../package.json", import.meta.url)));
 const nextRules = nextPlugin.configs["core-web-vitals"].rules;
 
 export default function makeNextConfig({
@@ -18,7 +21,7 @@ export default function makeNextConfig({
             languageOptions: {
                 parserOptions: {
                     project: [webProject],
-                    tsconfigRootDir: new URL("../../", import.meta.url).pathname, // racine monorepo
+                    tsconfigRootDir, // racine monorepo
                 },
             },
             settings: { next: { rootDir: ["apps/web/"] } },
