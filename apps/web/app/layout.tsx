@@ -1,7 +1,6 @@
 import "./globals.scss";
 import React, { PropsWithChildren } from "react";
-import AuthProvider from "@packages/ui/auth/aws-authenticator/auth-provider";
-
+import { AuthProvider } from "@/apps/web/src/auth";
 
 export default function RootLayout({ children }: PropsWithChildren) {
     return (

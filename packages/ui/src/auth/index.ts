@@ -1,4 +1,3 @@
-export { default as AuthProvider } from "./aws-authenticator/auth-provider.tsx";
 export { default as Authentication } from "./aws-authenticator/Authentication.tsx";
 export { default as AuthGuard } from "./AuthGuard.tsx";
 export { RequireLoginButton } from "./RequireLoginButton.tsx";
