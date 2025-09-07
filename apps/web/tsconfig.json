@@ -47,11 +47,7 @@
         "src/**/*.js",
         "src/**/*.jsx",
         "public/**/*.json",
-        ".next/types/**/*.ts",
-        "../../packages/types/src/amplify-global.d.ts",
-        "../../packages/ui/src/auth/aws-authenticator/Authentication.tsx",
-        "../../packages/ui/src/auth/AuthGuard.tsx",
-        "../../packages/ui/src/auth/RequireLoginButton.tsx"
+        ".next/types/**/*.ts"
     ],
     "exclude": ["node_modules"],
     "references": [

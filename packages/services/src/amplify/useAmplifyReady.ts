@@ -11,7 +11,7 @@ export function useAmplifyReady() {
 
         // Fallback ultra-léger: on ré-importe setup si, pour une raison X, ce n’est pas encore fait
         let canceled = false;
-        import("./setup.js")
+        import("./setup")
             .then(() => {
                 if (!canceled) setReady(!!globalThis.__AMPLIFY_CONFIGURED__);
             })

@@ -4,7 +4,7 @@
 import * as React from "react";
 import { useRouter } from "next/navigation";
 import { useAuthenticator } from "@aws-amplify/ui-react";
-import { goToLoginWithReturn } from "./goToLoginWithReturn.js";
+import { goToLoginWithReturn } from "./goToLoginWithReturn";
 
 type Props = {
     children: React.ReactNode;

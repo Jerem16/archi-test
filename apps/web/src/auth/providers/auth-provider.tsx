@@ -1,8 +1,8 @@
 // app/auth-provider.tsx
 "use client";
 
-import "@packages/services/amplify/setup"; // déclenche configure() au chargement du module
-import { useAmplifyReady } from "@packages/services/amplify/useAmplifyReady";
+import "@packages/services/amplify"; // déclenche configure() au chargement du module
+import { useAmplifyReady } from "@packages/services/amplify";
 import { Authenticator } from "@aws-amplify/ui-react";
 
 export default function AuthProvider({ children }: { children: React.ReactNode }) {

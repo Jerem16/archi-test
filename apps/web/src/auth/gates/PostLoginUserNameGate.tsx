@@ -6,8 +6,18 @@ import { useAuthenticator } from "@aws-amplify/ui-react";
 import { useUserNameForm } from "@src/entities/models/userName/hooks";
 import { onUserNameUpdated } from "@src/entities/models/userName/bus";
 import type { UserNameType } from "@src/entities/models/userName";
-import UserNameModal from "@src/components/Profile/UserNameModal";
 import { useRouter } from "next/navigation";
+
+interface UserNameModalProps {
+    isOpen: boolean;
+    onClose: () => void;
+}
+
+function UserNameModal({ isOpen, onClose }: UserNameModalProps) {
+    void isOpen;
+    void onClose;
+    return null;
+}
 
 export default function PostLoginUserNameGate() {
     const { authStatus, user } = useAuthenticator((ctx) => [ctx.authStatus, ctx.user]);

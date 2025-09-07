@@ -187,7 +187,7 @@ export default function useModelForm<
             setLoadingExtras(true);
             const next = await loadExtras();
             if (next && typeof next === "object") {
-                setExtras((prev) => ({ ...(prev as E), ...(next as Partial<E>) }) as E);
+                setExtras((prev) => ({ ...prev, ...next }));
             }
         } catch (e) {
             setError(e);

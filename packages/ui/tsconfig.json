@@ -6,16 +6,22 @@
         "composite": true,
         "declaration": true,
         "jsx": "react-jsx",
-        "allowImportingTsExtensions": true,
-        "module": "NodeNext",
-        "moduleResolution": "NodeNext",
+        "emitDeclarationOnly": true,
+        "module": "ESNext",
+        "moduleResolution": "Bundler",
         "tsBuildInfoFile": "./dist/.tsbuildinfo",
-        "skipLibCheck": true,
         "baseUrl": ".",
         "paths": {
-            "@packages/ui/*": ["src/*"]
-        }
+            "@packages/ui/*": ["src/*"],
+            "@packages/services": ["../services/src"],
+            "@packages/services/*": ["../services/src/*"]
+        },
+        "skipLibCheck": true
     },
     "include": ["src"],
+    "peerDependencies": {
+        "aws-amplify": ">=6",
+        "@aws-amplify/ui-react": ">=6"
+    },
     "references": [{ "path": "../types" }, { "path": "../services" }]
 }

@@ -1,5 +1,11 @@
 import { client, crudService } from "@src/entities/core";
-import type { TodoCreateInput, TodoUpdateInput } from "@src/types/models/todo";
+
+interface TodoCreateInput {
+    title: string;
+    completed?: boolean;
+}
+
+type TodoUpdateInput = Partial<TodoCreateInput>;
 
 export const todoService = crudService<
     "Todo",
