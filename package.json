@@ -12,7 +12,8 @@
     },
     "scripts": {
         "dev": "yarn workspace web dev",
-        "build": "tsc -b packages/tsconfig.json",
+        "build": "yarn workspace web build",
+        "start": "yarn workspace web start",
         "tsc": "yarn tsc:packages && yarn tsc:web",
         "tsc:packages": "tsc -b packages/tsconfig.json",
         "tsc:web": "yarn workspace web run tsc",
