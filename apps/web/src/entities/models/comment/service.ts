@@ -1,5 +1,11 @@
 import { client, crudService } from "@src/entities/core";
-import type { CommentCreateInput, CommentUpdateInput } from "@src/types/models/comment";
+
+interface CommentCreateInput {
+    content: string;
+    postId: string;
+}
+
+type CommentUpdateInput = Partial<CommentCreateInput>;
 
 export const commentService = crudService<
     "Comment",

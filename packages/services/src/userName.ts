@@ -4,7 +4,9 @@ export type UserNameCreateInput = {
 };
 
 export const userNameService = {
-    async create(_data: UserNameCreateInput): Promise<void> {
+    create(_data: UserNameCreateInput): Promise<void> {
+        void _data;
         // Implémentation spécifique à l'application à fournir
+        return Promise.resolve();
     },
 };

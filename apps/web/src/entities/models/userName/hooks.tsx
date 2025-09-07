@@ -89,7 +89,7 @@ export function useUserNameForm(userName: UserNameType | null) {
 
     // Hydrate depuis la prop ou l’utilisateur courant (sub)
     useEffect(() => {
-        void (async () => {
+        (() => {
             if (userName) {
                 setUserNameId(userName.id);
                 adoptInitial(toUserNameForm(userName, [], []), "edit");

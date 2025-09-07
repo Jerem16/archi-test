@@ -175,7 +175,7 @@ export function usePostForm(post: PostType | null) {
                 }
 
                 setMessage("Article supprimé avec succès.");
-                refresh();
+                await refresh();
             } catch (e: unknown) {
                 setError(e);
                 setMessage("Erreur lors de la suppression de l’article.");

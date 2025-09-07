@@ -16,7 +16,7 @@ export const sectionService = {
     ...base,
     async deleteCascade({ id }: { id: string }) {
         await deleteEdges(
-            sectionPostService.list,
+            sectionPostService.list.bind(sectionPostService),
             async (edge) => {
                 await sectionPostService.delete(edge.sectionId, edge.postId);
             },

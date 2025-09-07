@@ -11,9 +11,11 @@
         "module": "NodeNext",
         "moduleResolution": "NodeNext",
         "tsBuildInfoFile": "./dist/.tsbuildinfo",
-        "baseUrl": ".", // pas de paths cross-packages ici
+        "baseUrl": ".",
         "paths": {
-            "@packages/ui/*": ["src/*"] // local uniquement (optionnel)
+            "@packages/ui/*": ["src/*"],
+            "@packages/services": ["../services/src"],
+            "@packages/services/*": ["../services/src/*"]
         },
         "skipLibCheck": true
     },
