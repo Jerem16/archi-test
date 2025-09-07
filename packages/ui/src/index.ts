@@ -1,2 +1,2 @@
-export * from "./MarkdownViewer.tsx";
-export * from "./auth/index.ts";
+export * from "./MarkdownViewer";
+export * from "./auth";

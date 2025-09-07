@@ -5,7 +5,10 @@
         "outDir": "dist",
         "composite": true,
         "declaration": true,
-        "tsBuildInfoFile": "./dist/.tsbuildinfo"
+        "module": "ESNext",
+        "moduleResolution": "Bundler",
+        "tsBuildInfoFile": "./dist/.tsbuildinfo",
+        "skipLibCheck": true
     },
     "include": ["src"],
     "references": [{ "path": "../types" }]
