@@ -23,7 +23,7 @@
         "test": "yarn workspaces foreach -Rvt run test",
         "test:web": "yarn workspace web run test",
         "check": "yarn tsc && yarn lint && yarn test",
-        "clean": "yarn workspaces foreach -Rvt run clean || echo \"no clean script\" && rimraf --glob \"packages/*/dist\" \"apps/*/.next\" \"packages/*/build\" \"packages/*/coverage\""
+        "clean": "yarn workspaces foreach -Rvt run clean || echo \"no clean script\" && rimraf --glob \"packages/*/dist\" \"apps/*/tsconfig.tsbuildinfo\"  \"apps/*/.next\" \"packages/*/build\" \"packages/*/coverage\""
     },
     "devDependencies": {
         "@eslint/js": "9.35.0",
