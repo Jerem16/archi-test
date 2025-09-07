@@ -1,7 +1,7 @@
 // eslint.config.mjs (RACINE)
 import { fileURLToPath } from "node:url";
 import path from "node:path";
-import makeNextConfig from "@packages/eslint-config/next-js";
+import makeNextConfig from "./packages/eslint-config/next.js";
 import tseslint from "typescript-eslint";
 import importPlugin from "eslint-plugin-import";
 
