@@ -4,14 +4,14 @@
     "private": true,
     "type": "module",
     "main": "dist/index.js",
-    "types": "dist/index.d.ts",
+    "types": "src/index.d.ts",
     "exports": {
         ".": {
-            "types": "./dist/index.d.ts",
+            "types": "./src/index.d.ts",
             "default": "./dist/index.js"
         },
         "./amplify/*": {
-            "types": "./dist/amplify/*.d.ts",
+            "types": "./src/amplify/*.d.ts",
             "default": "./dist/amplify/*.js"
         }
     },
