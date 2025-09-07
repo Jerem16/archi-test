@@ -1,1 +1,1 @@
-export * from "./amplify/auth-client/index.ts";
+export * from "./amplify/auth-client";

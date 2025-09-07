@@ -7,9 +7,8 @@
         "declaration": true,
         "jsx": "react-jsx",
         "emitDeclarationOnly": true,
-        "allowImportingTsExtensions": true,
-        "module": "NodeNext",
-        "moduleResolution": "NodeNext",
+        "module": "ESNext",
+        "moduleResolution": "Bundler",
         "tsBuildInfoFile": "./dist/.tsbuildinfo",
         "baseUrl": ".",
         "paths": {

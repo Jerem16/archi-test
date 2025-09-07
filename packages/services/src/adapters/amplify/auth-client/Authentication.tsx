@@ -3,7 +3,7 @@
 import React from "react";
 import { Authenticator, View, Heading, useTheme } from "@aws-amplify/ui-react";
 import "@aws-amplify/ui-react/styles.css";
-import { configureI18n, formFields } from "./index.js";
+import { configureI18n, formFields } from "./index";
 
 // import "@assets/styles/amplify/authenticator.scss";
 import { signUp } from "aws-amplify/auth";
