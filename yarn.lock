@@ -7853,7 +7853,8 @@ __metadata:
   dependencies:
     "@packages/domain": "workspace:*"
     "@packages/types": "workspace:*"
-    aws-amplify: "npm:^6.14.4"
+  peerDependencies:
+    aws-amplify: ">=6"
   languageName: unknown
   linkType: soft
 
@@ -7867,11 +7868,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@packages/ui@workspace:packages/ui"
   dependencies:
+    "@packages/services": "workspace:*"
     "@packages/types": "workspace:*"
     react-markdown: "npm:10.1.0"
     remark-gfm: "npm:^4.0.0"
   peerDependencies:
-    "@types/react": ">=18"
+    "@aws-amplify/ui-react": ">=6"
+    next: ">=15"
     react: ">=18"
     react-dom: ">=18"
   peerDependenciesMeta:
@@ -14624,7 +14627,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:^11.0.2":
+"glob@npm:^11.0.0, glob@npm:^11.0.2":
   version: 11.0.3
   resolution: "glob@npm:11.0.3"
   dependencies:
@@ -19073,6 +19076,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"rimraf@npm:^6.0.1":
+  version: 6.0.1
+  resolution: "rimraf@npm:6.0.1"
+  dependencies:
+    glob: "npm:^11.0.0"
+    package-json-from-dist: "npm:^1.0.0"
+  bin:
+    rimraf: dist/esm/bin.mjs
+  checksum: 10c0/b30b6b072771f0d1e73b4ca5f37bb2944ee09375be9db5f558fcd3310000d29dfcfa93cf7734d75295ad5a7486dc8e40f63089ced1722a664539ffc0c3ece8c6
+  languageName: node
+  linkType: hard
+
 "rollup@npm:^4.20.0":
   version: 4.50.0
   resolution: "rollup@npm:4.50.0"
@@ -19171,6 +19186,7 @@ __metadata:
     eslint-plugin-react-hooks: "npm:5.2.0"
     eslint-plugin-unused-imports: "npm:^4.2.0"
     globals: "npm:16.3.0"
+    rimraf: "npm:^6.0.1"
     typescript: "npm:5.4.4"
     typescript-eslint: "npm:8.42.0"
   languageName: unknown

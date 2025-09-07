@@ -23,7 +23,7 @@
         "test": "yarn workspaces foreach -Rvt run test",
         "test:web": "yarn workspace web run test",
         "check": "yarn tsc && yarn lint && yarn test",
-        "clean": "yarn workspaces foreach -Rvt run clean || echo \"no clean script\" && rm -rf packages/*/dist"
+        "clean": "yarn workspaces foreach -Rvt run clean || echo \"no clean script\" && rimraf --glob \"packages/*/dist\" \"apps/*/.next\" \"packages/*/build\" \"packages/*/coverage\""
     },
     "devDependencies": {
         "@eslint/js": "9.35.0",
@@ -42,6 +42,7 @@
         "eslint-plugin-react-hooks": "5.2.0",
         "eslint-plugin-unused-imports": "^4.2.0",
         "globals": "16.3.0",
+        "rimraf": "^6.0.1",
         "typescript": "5.4.4",
         "typescript-eslint": "8.42.0"
     },
