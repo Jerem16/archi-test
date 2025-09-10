@@ -1,0 +1,28 @@
+{
+    "name": "tools",
+    "private": true,
+    "workspaces": [
+        "apps/*",
+        "packages/*",
+        "tooling/*"
+    ],
+    "packageManager": "yarn@4.9.4",
+    "engines": {
+        "node": "20.18.x"
+    },
+    "scripts": {
+        "generate:sitemap": "node scripts/generate-sitemap.js",
+        "keep:list": "node scripts/keep-list.cjs",
+        "keep:functions": "node scripts/keep-functions.cjs"
+    },
+    "devDependencies": {
+        "fast-glob": "^3.3.3",
+        "sass-graph": "^4.0.1",
+        "madge": "^8.0.0",
+        "ts-prune": "^0.10.3",
+        "sitemap": "^8.0.0"
+    },
+    "resolutions": {
+        "react-hook-form": "7.51.5"
+    }
+}
