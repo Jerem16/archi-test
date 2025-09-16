@@ -1,4 +1,5 @@
 import eslintConfigPrettier from "eslint-config-prettier";
+import pluginImport from "eslint-plugin-import";
 import pluginReactHooks from "eslint-plugin-react-hooks";
 import pluginReact from "eslint-plugin-react";
 import globals from "globals";
@@ -16,8 +17,14 @@ export const config = [
 
     // Hooks
     {
-        plugins: { "react-hooks": pluginReactHooks },
-        settings: { react: { version: "detect" } },
+        plugins: {
+            "react-hooks": pluginReactHooks,
+            import: pluginImport,
+        },
+        settings: {
+            react: { version: "detect" },
+            "import/core-modules": ["typescript-eslint"],
+        },
         rules: {
             ...pluginReactHooks.configs.recommended.rules,
             "react/react-in-jsx-scope": "off",
@@ -26,19 +33,23 @@ export const config = [
 
             // miroirs d’erreurs tsc pour tes alias/paths
             "import/no-unresolved": "error",
-
-            // ↓ Bruit TS côté UI (ne change pas les règles Next)
-            "@typescript-eslint/no-unsafe-call": "warn",
-            "@typescript-eslint/no-unsafe-member-access": "warn",
-            "@typescript-eslint/no-unsafe-assignment": "warn",
-            "@typescript-eslint/no-unsafe-return": "warn",
-            "@typescript-eslint/no-redundant-type-constituents": "warn",
         },
         languageOptions: {
             globals: {
                 ...globals.browser,
                 ...globals.serviceworker,
             },
+        },
+    },
+    {
+        files: ["**/*.{ts,tsx,cts,mts}"],
+        rules: {
+            // ↓ Bruit TS côté UI (ne change pas les règles Next)
+            "@typescript-eslint/no-unsafe-call": "warn",
+            "@typescript-eslint/no-unsafe-member-access": "warn",
+            "@typescript-eslint/no-unsafe-assignment": "warn",
+            "@typescript-eslint/no-unsafe-return": "warn",
+            "@typescript-eslint/no-redundant-type-constituents": "warn",
         },
     },
 
