@@ -17,6 +17,7 @@ export default [
             "**/eslint.config.js",
             "apps/web/next-env.d.ts",
             "apps/web/next.config.ts",
+            "**/*.d.ts",
         ],
     },
 
@@ -76,6 +77,7 @@ export default [
     // 🔧 packages : type-aware strict
     {
         files: ["packages/**/*.{ts,tsx}"],
+        ignores: ["packages/**/*.d.ts"],
         plugins: { import: importPlugin }, // ❌ pas de "@typescript-eslint" ici non plus
         languageOptions: {
             parser: tseslint.parser,
@@ -103,6 +105,7 @@ export default [
         },
         rules: {
             "import/no-unresolved": "error",
+            "@typescript-eslint/no-unused-vars": "warn",
         },
     },
 ];

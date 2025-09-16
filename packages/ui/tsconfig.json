@@ -6,7 +6,6 @@
         "composite": true,
         "declaration": true,
         "jsx": "react-jsx",
-        "emitDeclarationOnly": true,
         "module": "ESNext",
         "moduleResolution": "Bundler",
         "tsBuildInfoFile": "./dist/.tsbuildinfo",
