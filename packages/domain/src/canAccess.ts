@@ -35,6 +35,3 @@ export function canAccess(
     }
     return false;
 }
-function test(a: number, b: number) {
-    return a + b;
-}

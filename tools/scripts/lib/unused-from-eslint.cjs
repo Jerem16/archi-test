@@ -15,8 +15,12 @@ function run(cmd, args) {
             stderr: (out.stderr || "").toString(),
             status: out.status ?? 0,
         };
-    } catch (e) {
-        return { stdout: "", stderr: String(e), status: 1 };
+    } catch (error) {
+        const message =
+            error instanceof Error
+                ? error.stack || error.message
+                : String(error);
+        return { stdout: "", stderr: message, status: 1 };
     }
 }
 

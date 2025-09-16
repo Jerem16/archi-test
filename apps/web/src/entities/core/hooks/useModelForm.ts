@@ -174,8 +174,8 @@ export default function useModelForm<
             } else if (resetOnNull) {
                 adoptInitial(initialForm, "create");
             }
-        } catch (e) {
-            setError(e);
+        } catch (error: unknown) {
+            setError(error);
         } finally {
             setLoading(false);
         }
@@ -189,8 +189,8 @@ export default function useModelForm<
             if (next && typeof next === "object") {
                 setExtras((prev) => ({ ...prev, ...next }));
             }
-        } catch (e) {
-            setError(e);
+        } catch (error: unknown) {
+            setError(error);
         } finally {
             setLoadingExtras(false);
         }
@@ -237,8 +237,8 @@ export default function useModelForm<
                 initialRef.current = form;
             }
             return true;
-        } catch (e) {
-            setError(e);
+        } catch (error: unknown) {
+            setError(error);
             return false;
         } finally {
             setSaving(false);

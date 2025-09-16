@@ -89,8 +89,8 @@ async function tryModes<T>(
     for (const m of modes.length ? modes : [undefined]) {
         try {
             return await runner(m);
-        } catch (e) {
-            lastErr = e;
+        } catch (error: unknown) {
+            lastErr = error;
         }
     }
     throw lastErr;
