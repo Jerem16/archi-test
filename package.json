@@ -4,7 +4,7 @@
     "workspaces": [
         "apps/*",
         "packages/*",
-        "tooling/*"
+        "tools/*"
     ],
     "packageManager": "yarn@4.9.4",
     "engines": {
@@ -24,7 +24,12 @@
         "test": "yarn workspaces foreach -Rvt run test",
         "test:web": "yarn workspace web run test",
         "check": "yarn tsc && yarn lint && yarn test",
-        "clean": "yarn workspaces foreach -Rvt run clean || echo \"no clean script\" && rimraf --glob \"packages/*/dist\" \"apps/*/tsconfig.tsbuildinfo\"  \"apps/*/.next\" \"packages/*/build\" \"packages/*/coverage\""
+        "clean": "yarn workspaces foreach -Rvt run clean || echo \"no clean script\" && rimraf --glob \"packages/*/dist\" \"apps/*/tsconfig.tsbuildinfo\"  \"apps/*/.next\" \"packages/*/build\" \"packages/*/coverage\"",
+        "keep:list": "node /tools/scripts/keep-list.cjs",
+        "keep": "yarn lint && node ./tools/scripts/keep-list.cjs && node ./tools/scripts/keep-functions.cjs",
+        "keep:fn": "node /tools/scripts/keep-functions.cjs",
+        "css:prune": "tsx tools/scripts/css-prune.ts",
+        "css:prune:apply": "tsx tools/scripts/css-prune.ts --apply"
     },
     "devDependencies": {
         "@eslint/js": "9.35.0",

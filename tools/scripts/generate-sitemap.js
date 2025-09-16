@@ -1,14 +1,14 @@
 const fs = require("fs");
 const { SitemapStream } = require("sitemap");
 
-const siteUrl = "https://desktop.peur-de-la-conduite.fr"; // ou desktop selon ton cas
+const siteUrl = "https://mobile.peur-de-la-conduite.fr"; // ou desktop selon ton cas
 
 const links = [
     { url: "/", changefreq: "daily", priority: 1.0 },
     { url: "/contact", changefreq: "monthly", priority: 0.8 },
     { url: "/services", changefreq: "monthly", priority: 0.8 },
     { url: "/tarifs", changefreq: "monthly", priority: 0.8 },
-    // Tu peux en rajouter ici plus tard
+    { url: "/blog", changefreq: "monthly", priority: 0.8 },
 ];
 
 const sitemap = new SitemapStream({ hostname: siteUrl });

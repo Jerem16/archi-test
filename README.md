@@ -1,6 +1,7 @@
 # Next 15 Monorepo (apps/packages)
 
 Monorepo minimal conforme à:
+
 - **Next.js** `15.0.3`
 - **react-markdown** `10.1.0` + **remark-gfm**
 - **Sass** `1.60.0`
@@ -23,7 +24,7 @@ yarn dev        # lance apps/web
 - `packages/domain` : Logique métier (pure TS)
 - `packages/services` : IO/Orchestration (Amplify, REST, etc.)
 - `packages/types` : Types/contrats partagés
-- `tooling` : Configs/outillage
+- `tools` : Configs/outillage
 - `docs` : Documentation
 - `tests` : Dossiers de tests (selon besoin)
 

@@ -4,7 +4,7 @@
     "workspaces": [
         "apps/*",
         "packages/*",
-        "tooling/*"
+        "tools/*"
     ],
     "packageManager": "yarn@4.9.4",
     "engines": {

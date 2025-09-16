@@ -17,8 +17,12 @@
     },
     "typesVersions": {
         "*": {
-            "auth": ["src/auth/index.ts"],
-            "*": ["src/*"]
+            "auth": [
+                "src/auth/index.ts"
+            ],
+            "*": [
+                "src/*"
+            ]
         }
     },
     "scripts": {
