@@ -1,0 +1,47 @@
+{
+    "meta": {
+        "node": "22.19.0",
+        "yarn": "4.9.4",
+        "nodeLinker": "node-modules",
+        "turbo": false,
+        "ci": ["github-actions"]
+    },
+    "workspaces": [
+        {
+            "name": "web",
+            "path": "apps/web",
+            "roles": ["app-next"],
+            "scripts": ["dev", "build", "start", "lint", "tsc", "format", "test", "analyze"]
+        },
+        {
+            "name": "@packages/domain",
+            "path": "packages/domain",
+            "roles": ["lib-ts"],
+            "scripts": ["build", "tsc", "lint", "format", "test"]
+        },
+        {
+            "name": "@packages/services",
+            "path": "packages/services",
+            "roles": ["lib-ts"],
+            "scripts": ["build", "tsc", "lint", "format", "test"]
+        },
+        {
+            "name": "@packages/types",
+            "path": "packages/types",
+            "roles": ["lib-ts"],
+            "scripts": ["build", "tsc", "lint", "format", "test"]
+        },
+        {
+            "name": "@packages/ui",
+            "path": "packages/ui",
+            "roles": ["ui-lib"],
+            "scripts": ["build", "tsc", "lint", "format", "test"]
+        },
+        {
+            "name": "@packages/eslint-config",
+            "path": "packages/eslint-config",
+            "roles": ["config-pkg"],
+            "scripts": ["lint", "format", "test"]
+        }
+    ]
+}

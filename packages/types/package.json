@@ -19,9 +19,10 @@
         }
     },
     "scripts": {
-        "build": "tsc --build",
-        "tsc": "tsc --noEmit",
-        "lint": "eslint -c eslint.config.js .",
-        "test": "echo \"(placeholder)\""
+        "build": "tsc --build tsconfig.build.json",
+        "tsc": "tsc -p tsconfig.json --noEmit",
+        "lint": "eslint .",
+        "format": "prettier --write .",
+        "test": "vitest run --passWithNoTests"
     }
 }

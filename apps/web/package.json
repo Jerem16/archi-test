@@ -6,10 +6,11 @@
         "dev": "next dev",
         "build": "next build",
         "start": "next start",
-        "lint": "next lint",
-        "tsc": "tsc --noEmit",
+        "lint": "eslint .",
+        "tsc": "tsc -p tsconfig.json --noEmit",
         "format": "prettier --write .",
-        "test": "echo \"(placeholder)\""
+        "test": "vitest run --passWithNoTests",
+        "analyze": "NEXT_ANALYZE=1 next build"
     },
     "dependencies": {
         "@aws-amplify/auth": "^6.14.4",
@@ -90,7 +91,7 @@
     ],
     "packageManager": "yarn@4.9.4",
     "engines": {
-        "node": "22.19.x"
+        "node": ">=22.19.0 <23"
     },
     "packageExtensions": {
         "@aws-amplify/plugin-types@*": {

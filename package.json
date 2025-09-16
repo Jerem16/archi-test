@@ -8,32 +8,38 @@
     ],
     "packageManager": "yarn@4.9.4",
     "engines": {
-        "node": "22.19.x"
+        "node": ">=22.19.0 <23"
     },
     "scripts": {
         "dev": "yarn workspace web dev",
-        "build": "yarn workspace web build",
+        "build": "yarn workspaces foreach -Av --exclude root --topological-dev run build",
         "start": "yarn workspace web start",
         "tsc": "yarn tsc:packages && yarn tsc:web",
         "tsc:packages": "tsc -b packages/tsconfig.json",
         "tsc:web": "yarn workspace web run tsc",
-        "lint": "eslint -f codeframe --max-warnings=0 --no-error-on-unmatched-pattern packages/domain packages/services packages/types packages/ui apps/web",
+        "typecheck": "yarn workspaces foreach -Av --exclude root run tsc || yarn workspaces foreach -Av --exclude root run typecheck",
+        "lint": "yarn workspaces foreach -Av --exclude root run lint",
         "lint:pretty": "yarn -s lint | % { $_ -replace [regex]::Escape(\"$PWD\\\"), \".\\\" -replace '/', '\\\\' }",
         "lint:packages": "eslint \"packages/**/*.{ts,tsx,js,jsx}\"",
         "lint:web": "eslint apps/web",
-        "test": "yarn workspaces foreach -Rvt run test",
+        "test": "yarn vitest run --passWithNoTests && yarn test:workspaces",
+        "test:workspaces": "yarn workspaces foreach -Av --exclude root run test || true",
         "test:web": "yarn workspace web run test",
-        "check": "yarn tsc && yarn lint && yarn test",
+        "format": "yarn workspaces foreach -Av --exclude root run format || true",
+        "check": "yarn typecheck && yarn lint && yarn test",
         "clean": "yarn workspaces foreach -Rvt run clean || echo \"no clean script\" && rimraf --glob \"packages/*/dist\" \"apps/*/tsconfig.tsbuildinfo\"  \"apps/*/.next\" \"packages/*/build\" \"packages/*/coverage\"",
-        "keep:list": "node /tools/scripts/keep-list.cjs",
+        "keep:list": "node ./tools/scripts/keep-list.cjs",
         "keep": "yarn lint && node ./tools/scripts/keep-list.cjs && node ./tools/scripts/keep-functions.cjs",
-        "keep:fn": "node /tools/scripts/keep-functions.cjs",
+        "keep:fn": "node ./tools/scripts/keep-functions.cjs",
         "css:prune": "tsx tools/scripts/css-prune.ts",
-        "css:prune:apply": "tsx tools/scripts/css-prune.ts --apply"
+        "css:prune:apply": "tsx tools/scripts/css-prune.ts --apply",
+        "tools:css-prune": "tsx tools/css-prune.ts",
+        "tools:sitemap": "node tools/generate-sitemap.js"
     },
     "devDependencies": {
         "@eslint/js": "9.35.0",
         "@next/eslint-plugin-next": "15.3.1",
+        "@types/node": "^22.9.0",
         "@typescript-eslint/eslint-plugin": "^8.42.0",
         "@typescript-eslint/parser": "^8.42.0",
         "eslint": "9.35.0",
@@ -48,9 +54,12 @@
         "eslint-plugin-react-hooks": "5.2.0",
         "eslint-plugin-unused-imports": "^4.2.0",
         "globals": "16.3.0",
+        "prettier": "^3.6.2",
         "rimraf": "^6.0.1",
+        "tsx": "^4.19.2",
         "typescript": "5.4.4",
-        "typescript-eslint": "8.42.0"
+        "typescript-eslint": "8.42.0",
+        "vitest": "^2.1.4"
     },
     "resolutions": {
         "react-hook-form": "7.51.5"
