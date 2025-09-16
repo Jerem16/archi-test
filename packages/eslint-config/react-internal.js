@@ -21,6 +21,18 @@ export const config = [
         rules: {
             ...pluginReactHooks.configs.recommended.rules,
             "react/react-in-jsx-scope": "off",
+            "react/jsx-no-undef": "error", // ton cas de test sur <AuthProvider>
+            "react/react-in-jsx-scope": "off",
+
+            // miroirs d’erreurs tsc pour tes alias/paths
+            "import/no-unresolved": "error",
+
+            // ↓ Bruit TS côté UI (ne change pas les règles Next)
+            "@typescript-eslint/no-unsafe-call": "warn",
+            "@typescript-eslint/no-unsafe-member-access": "warn",
+            "@typescript-eslint/no-unsafe-assignment": "warn",
+            "@typescript-eslint/no-unsafe-return": "warn",
+            "@typescript-eslint/no-redundant-type-constituents": "warn",
         },
         languageOptions: {
             globals: {

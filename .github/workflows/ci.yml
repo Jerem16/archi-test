@@ -1,7 +1,9 @@
+# .github/workflows/ci.yml
 name: CI
 on:
-  push:
-  pull_request:
+    push:
+    pull_request:
+
 jobs:
   build-test:
     runs-on: ubuntu-latest
