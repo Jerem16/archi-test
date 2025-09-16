@@ -483,8 +483,9 @@ async function main(): Promise<void> {
                 console.error(`Commande inconnue: ${command}`);
                 process.exitCode = 1;
         }
-    } catch (error) {
-        console.error(error instanceof Error ? error.message : error);
+    } catch (error: unknown) {
+        const message = error instanceof Error ? error.message : String(error);
+        console.error(message);
         process.exitCode = 1;
     }
 }

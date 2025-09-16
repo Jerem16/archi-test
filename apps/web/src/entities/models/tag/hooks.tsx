@@ -223,8 +223,8 @@ export function useTagForm(tag: TagType | null) {
                     }));
                     setMessage("Tag associé à l'article.");
                 }
-            } catch (e) {
-                setError(e);
+            } catch (error: unknown) {
+                setError(error);
                 setMessage("Erreur lors de la mise à jour de l’association tag↔post.");
             }
         },

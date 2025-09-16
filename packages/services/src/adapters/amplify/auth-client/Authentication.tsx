@@ -21,8 +21,8 @@ export default function Authentication() {
                     id: result.userId,
                     userName: formData.username,
                 });
-            } catch (err) {
-                console.error("Erreur création pseudo", err);
+            } catch (error: unknown) {
+                console.error("Erreur création pseudo", error);
             }
             return result;
         },

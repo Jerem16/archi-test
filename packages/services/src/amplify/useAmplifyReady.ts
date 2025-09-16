@@ -15,8 +15,8 @@ export function useAmplifyReady() {
             .then(() => {
                 if (!canceled) setReady(!!globalThis.__AMPLIFY_CONFIGURED__);
             })
-            .catch((e: string) => {
-                console.error("[Amplify] setup import failed:", e);
+            .catch((error: unknown) => {
+                console.error("[Amplify] setup import failed:", error);
             });
         return () => {
             canceled = true;

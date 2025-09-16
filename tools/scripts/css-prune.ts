@@ -47,6 +47,36 @@ function loadKeepList(projectRoot: string) {
     }
 }
 
+function extractErrorOutput(error: unknown): string {
+    if (typeof error === "object" && error !== null && "stderr" in error) {
+        const stderr = (error as { stderr?: unknown }).stderr;
+        if (typeof stderr === "string") {
+            return stderr;
+        }
+        if (
+            stderr &&
+            typeof (stderr as { toString: () => string }).toString === "function"
+        ) {
+            try {
+                return (stderr as { toString: () => string }).toString();
+            } catch {
+                // ignore error when stringifying stderr
+            }
+        }
+    }
+    if (error instanceof Error) {
+        return error.stack ?? error.message;
+    }
+    if (typeof error === "string") {
+        return error;
+    }
+    try {
+        return JSON.stringify(error);
+    } catch {
+        return String(error);
+    }
+}
+
 async function loadKeepFunctions(projectRoot: string) {
     try {
         const p = path.join(projectRoot, "keep-functions.cjs");
@@ -740,8 +770,12 @@ async function main() {
         } catch {}
         try {
             execSync("yarn build", { stdio: "inherit" });
-        } catch (e: any) {
-            fs.writeFileSync(path.join("reports", `css-prune-error-${stamp}.log`), e.stderr?.toString() || String(e));
+        } catch (error: unknown) {
+            const output = extractErrorOutput(error);
+            fs.writeFileSync(
+                path.join("reports", `css-prune-error-${stamp}.log`),
+                output
+            );
             execSync("git reset --hard", { stdio: "inherit" });
             process.exit(1);
         }
@@ -755,8 +789,12 @@ async function main() {
     }
 }
 
-main().catch((e) => {
-    console.error(e);
+main().catch((error: unknown) => {
+    if (error instanceof Error) {
+        console.error(error);
+    } else {
+        console.error(extractErrorOutput(error));
+    }
     process.exit(1);
 });
 /* CSS-PRUNE AUTOGEN END */
