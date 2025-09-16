@@ -7835,7 +7835,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@packages/eslint-config@workspace:packages/eslint-config"
   dependencies:
+    "@eslint/js": "npm:9.35.0"
+    eslint-config-prettier: "npm:10.1.1"
     eslint-plugin-import: "npm:^2.32.0"
+    eslint-plugin-react: "npm:7.37.5"
+    eslint-plugin-react-hooks: "npm:5.2.0"
+    globals: "npm:16.3.0"
+    typescript-eslint: "npm:8.42.0"
   peerDependencies:
     "@eslint/js": ">=9.34.0 <10"
     "@next/eslint-plugin-next": ">=15.0.0 <16"
