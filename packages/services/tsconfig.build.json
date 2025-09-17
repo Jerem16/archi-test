@@ -2,6 +2,12 @@
     "extends": "./tsconfig.json",
     "compilerOptions": {
         "noEmit": false,
-        "emitDeclarationOnly": true
+        "emitDeclarationOnly": true,
+        "paths": {
+            "@packages/services": ["./src"],
+            "@packages/services/*": ["./src/*"],
+            "@packages/types": ["../types/dist/index.d.ts"],
+            "@packages/types/*": ["../types/dist/*"]
+        }
     }
 }

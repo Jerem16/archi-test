@@ -8,23 +8,28 @@ const tsconfigRootDir = path.dirname(fileURLToPath(new URL("../../package.json",
 const nextRules = nextPlugin.configs["core-web-vitals"].rules;
 
 export default function makeNextConfig({
-    webProject = "./apps/web/tsconfig.json",
-    include = ["apps/web/{app,src}/**/*.{ts,tsx}"],
+    project = "./apps/desktop/tsconfig.json",
+    include = ["apps/desktop/{app,src}/**/*.{ts,tsx}"],
+    rootDirs = ["apps/desktop/"],
 } = {}) {
+    const projects = Array.isArray(project) ? project : [project];
+    const files = Array.isArray(include) ? include : [include];
+    const roots = Array.isArray(rootDirs) ? rootDirs : [rootDirs];
+
     return [
         ...reactConfig,
 
         // Bloc Next + TS (type-checked). Le consumer passera le tsconfig de l'app.
         {
-            files: include,
+            files,
             plugins: { "@next/next": nextPlugin },
             languageOptions: {
                 parserOptions: {
-                    project: [webProject],
+                    project: projects,
                     tsconfigRootDir, // racine monorepo
                 },
             },
-            settings: { next: { rootDir: ["apps/web/"] } },
+            settings: { next: { rootDir: roots } },
             rules: {
                 ...nextRules,
                 "@next/next/no-html-link-for-pages": "off",

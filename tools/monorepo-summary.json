@@ -3,15 +3,21 @@
         "node": "22.19.0",
         "yarn": "4.9.4",
         "nodeLinker": "node-modules",
-        "turbo": false,
+        "turbo": true,
         "ci": ["github-actions"]
     },
     "workspaces": [
         {
-            "name": "web",
-            "path": "apps/web",
+            "name": "desktop",
+            "path": "apps/desktop",
             "roles": ["app-next"],
-            "scripts": ["dev", "build", "start", "lint", "tsc", "format", "test", "analyze"]
+            "scripts": ["dev", "build", "start", "lint", "typecheck", "tsc", "format", "test", "analyze"]
+        },
+        {
+            "name": "mobile",
+            "path": "apps/mobile",
+            "roles": ["app-next"],
+            "scripts": ["dev", "build", "start", "lint", "typecheck", "tsc", "format", "test", "analyze"]
         },
         {
             "name": "@packages/domain",
