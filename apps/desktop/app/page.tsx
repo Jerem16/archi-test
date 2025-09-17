@@ -12,7 +12,7 @@ Ce projet **Next 15** utilise \`react-markdown\` + \`remark-gfm\`.
 - Services (Amplify) : \`@packages/services\`
 - Types : \`@packages/types\`
 
-> Édite ce fichier dans \`apps/web/app/page.tsx\`.
+> Édite ce fichier dans \`apps/desktop/app/page.tsx\`.
 `;
 
 export default function Page() {

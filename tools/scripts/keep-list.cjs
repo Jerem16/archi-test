@@ -5,7 +5,7 @@
  *
  * Points clés :
  *  - Entrées Next App Router : page/layout/route/loading/error/not-found/template + middleware
- *  - Résolution alias via tsconfig (apps/web/tsconfig.json prioritaire)
+ *  - Résolution alias via tsconfig (apps/{desktop|mobile}/tsconfig.json prioritaires)
  *  - SCSS via sass-graph (optionnel)
  *  - ⚠️ AUCUNE protection globale "app/**" (pour autoriser la suppression de fichiers morts dans app/)
  */
@@ -114,7 +114,8 @@ function detectTsConfig() {
     const env = process.env.APP_TSCONFIG;
     const candidates = [
         env && env.trim(),
-        "apps/web/tsconfig.json",
+        "apps/desktop/tsconfig.json",
+        "apps/mobile/tsconfig.json",
         "tsconfig.json",
     ].filter(Boolean);
     for (const p of candidates) {

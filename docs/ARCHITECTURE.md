@@ -1,6 +1,7 @@
 # Architecture
 
-- **apps/web**: Next.js 15 (App Router)
+- **apps/desktop**: Next.js 15 (App Router)
+- **apps/mobile**: Next.js 15 (App Router)
 - **packages/ui**: composants React (aucun IO)
 - **packages/domain**: logique métier pure (aucun React ni IO)
 - **packages/services**: accès données + orchestrations (Amplify, REST, etc.)
@@ -8,7 +9,7 @@
 
 ## Flux de dépendances
 ```
-apps/web -> ui, domain, services, types
+apps/{desktop,mobile} -> ui, domain, services, types
 services -> domain?, types
 domain -> types
 ui -> domain?, types (pas de services)

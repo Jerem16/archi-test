@@ -1,11 +1,11 @@
 {
-  "root": "C:\\Users\\super\\Desktop\\TEST BCK\\peur-de-la-conduite\\Nouveau dossier\\archi-test",
-  "tsconfigUsed": "apps/web/tsconfig.json",
+  "root": "/workspace/archi-test",
+  "tsconfigUsed": "apps/desktop/tsconfig.json",
   "entryCount": 0,
   "protectedCount": 0,
   "scssReachableCount": 0,
   "keepCount": 0,
-  "deleteCandidatesCount": 202,
+  "deleteCandidatesCount": 226,
   "examples": {
     "entries": [],
     "keep": [],
@@ -16,10 +16,10 @@
       "amplify/package.json",
       "amplify/storage/resource.ts",
       "amplify/tsconfig.json",
-      "apps/web/.next/app-build-manifest.json",
-      "apps/web/.next/app-path-routes-manifest.json",
-      "apps/web/.next/build-manifest.json",
-      "apps/web/.next/diagnostics/build-diagnostics.json"
+      "apps/desktop/amplify_outputs.json",
+      "apps/desktop/app/RouteSync.tsx",
+      "apps/desktop/app/globals.scss",
+      "apps/desktop/app/layout.tsx"
     ]
   }
 }

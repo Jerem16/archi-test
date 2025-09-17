@@ -60,6 +60,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# turborepo cache
+.turbo/
+
 # amplify
 .amplify
 # amplify_outputs*

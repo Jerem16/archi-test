@@ -9,19 +9,21 @@
     "compilerOptions": {
         "baseUrl": "../..",
         "paths": {
-            "@apps/*": ["apps/web/*"],
-            "@app/*": ["apps/web/app/*"],
-            "@src/*": ["apps/web/src/*"],
+            "@apps/*": ["apps/desktop/*", "apps/mobile/*"],
+            "@apps/desktop/*": ["apps/desktop/*"],
+            "@apps/mobile/*": ["apps/mobile/*"],
+            "@app/*": ["apps/desktop/app/*", "apps/mobile/app/*"],
+            "@src/*": ["apps/desktop/src/*", "apps/mobile/src/*"],
             "@packages/ui/*": ["packages/ui/src/*"],
             "@packages/domain/*": ["packages/domain/src/*"],
             "@packages/services/*": ["packages/services/src/*"],
             "@packages/types/*": ["packages/types/src/*"],
-            "@assets/*": ["apps/web/src/assets/*"],
-            "@components/*": ["apps/web/src/components/*"],
-            "@hooks/*": ["apps/web/src/hooks/*"],
-            "@context/*": ["apps/web/src/context/*"],
-            "@utils/*": ["apps/web/src/utils/*"],
-            "@public/*": ["apps/web/public/*"]
+            "@assets/*": ["apps/desktop/src/assets/*", "apps/mobile/src/assets/*"],
+            "@components/*": ["apps/desktop/src/components/*", "apps/mobile/src/components/*"],
+            "@hooks/*": ["apps/desktop/src/hooks/*", "apps/mobile/src/hooks/*"],
+            "@context/*": ["apps/desktop/src/context/*", "apps/mobile/src/context/*"],
+            "@utils/*": ["apps/desktop/src/utils/*", "apps/mobile/src/utils/*"],
+            "@public/*": ["apps/desktop/public/*", "apps/mobile/public/*"]
         }
     }
 }

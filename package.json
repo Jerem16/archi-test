@@ -3,29 +3,23 @@
     "private": true,
     "workspaces": [
         "apps/*",
-        "packages/*",
-        "tools/*"
+        "packages/*"
     ],
     "packageManager": "yarn@4.9.4",
     "engines": {
         "node": ">=22.19.0 <23"
     },
     "scripts": {
-        "dev": "yarn workspace web dev",
-        "build": "yarn workspaces foreach -Av --exclude root --topological-dev run build",
-        "start": "yarn workspace web start",
-        "tsc": "yarn tsc:packages && yarn tsc:web",
-        "tsc:packages": "tsc -b packages/tsconfig.json",
-        "tsc:web": "yarn workspace web run tsc",
-        "typecheck": "yarn workspaces foreach -Av --exclude root run tsc || yarn workspaces foreach -Av --exclude root run typecheck",
-        "lint": "yarn workspaces foreach -Av --exclude root run lint",
-        "lint:pretty": "yarn -s lint | % { $_ -replace [regex]::Escape(\"$PWD\\\"), \".\\\" -replace '/', '\\\\' }",
-        "lint:packages": "eslint \"packages/**/*.{ts,tsx,js,jsx}\"",
-        "lint:web": "eslint apps/web",
-        "test": "yarn vitest run --passWithNoTests && yarn workspaces foreach -Av --exclude root run test || true",
-        "test:workspaces": "yarn workspaces foreach -Av --exclude root run test || true",
-        "test:web": "yarn workspace web run test",
-        "format": "yarn workspaces foreach -Av --exclude root run format || true",
+        "dev": "yarn dev:desktop",
+        "dev:desktop": "yarn --cwd apps/desktop dev",
+        "dev:mobile": "yarn --cwd apps/mobile dev",
+        "start:desktop": "yarn --cwd apps/desktop start",
+        "start:mobile": "yarn --cwd apps/mobile start",
+        "build": "turbo run build",
+        "lint": "turbo run lint",
+        "typecheck": "turbo run typecheck",
+        "test": "turbo run test",
+        "format": "turbo run format --no-cache || true",
         "check": "yarn typecheck && yarn lint && yarn test",
         "clean": "yarn workspaces foreach -Rvt run clean || echo \"no clean script\" && rimraf --glob \"packages/*/dist\" \"apps/*/tsconfig.tsbuildinfo\"  \"apps/*/.next\" \"packages/*/build\" \"packages/*/coverage\"",
         "keep:list": "node ./tools/scripts/keep-list.cjs",
@@ -57,6 +51,7 @@
         "prettier": "^3.6.2",
         "rimraf": "^6.0.1",
         "tsx": "^4.19.2",
+        "turbo": "^2.1.1",
         "typescript": "5.4.4",
         "typescript-eslint": "8.42.0",
         "vitest": "^2.1.4"

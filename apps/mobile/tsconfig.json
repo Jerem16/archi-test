@@ -14,9 +14,10 @@
         "baseUrl": "../..",
         "paths": {
             "@/*": ["./*"],
-            "@apps/*": ["apps/web/*"],
-            "@app/*": ["apps/web/app/*"],
-            "@src/*": ["apps/web/src/*"],
+            "@apps/*": ["apps/mobile/*"],
+            "@apps/amplify_outputs.json": ["apps/mobile/amplify_outputs.json"],
+            "@app/*": ["apps/mobile/app/*"],
+            "@src/*": ["apps/mobile/src/*"],
             "@amplify": ["amplify"],
             "@amplify/*": ["amplify/*"],
             "@packages/ui": ["packages/ui/src"],
@@ -27,12 +28,12 @@
             "@packages/services/*": ["packages/services/src/*"],
             "@packages/types": ["packages/types/src"],
             "@packages/types/*": ["packages/types/src/*"],
-            "@assets/*": ["apps/web/src/assets/*"],
-            "@components/*": ["apps/web/src/components/*"],
-            "@hooks/*": ["apps/web/src/hooks/*"],
-            "@context/*": ["apps/web/src/context/*"],
-            "@utils/*": ["apps/web/src/utils/*"],
-            "@public/*": ["apps/web/public/*"]
+            "@assets/*": ["apps/mobile/src/assets/*"],
+            "@components/*": ["apps/mobile/src/components/*"],
+            "@hooks/*": ["apps/mobile/src/hooks/*"],
+            "@context/*": ["apps/mobile/src/context/*"],
+            "@utils/*": ["apps/mobile/src/utils/*"],
+            "@public/*": ["apps/mobile/public/*"]
         },
         "plugins": [{ "name": "next" }]
     },
@@ -47,13 +48,8 @@
         "src/**/*.js",
         "src/**/*.jsx",
         "public/**/*.json",
+        "middleware.ts",
         ".next/types/**/*.ts"
     ],
-    "exclude": ["node_modules"],
-    "references": [
-        { "path": "../../packages/types" },
-        { "path": "../../packages/domain" },
-        { "path": "../../packages/services" },
-        { "path": "../../packages/ui" }
-    ]
+    "exclude": ["node_modules"]
 }

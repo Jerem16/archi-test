@@ -24,6 +24,13 @@ export default [
         files: ["**/*.{ts,tsx}"],
     })),
 
+    {
+        files: ["**/*.{ts,tsx}"],
+        rules: {
+            "@typescript-eslint/no-explicit-any": "error",
+        },
+    },
+
     // Soft-mode (transforme error -> warn en dev si plugin activé)
     // { plugins: { "only-warn": onlyWarn } },
 
